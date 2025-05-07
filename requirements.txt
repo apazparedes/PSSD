@@ -1,0 +1,13 @@
+gdown
+pandas
+transformers
+datasets
+torch
+matplotlib
+accelerate 
+tiktoken
+spacy
+numpy
+torch
+SentencePiece
+scikit-learn
