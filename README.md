@@ -35,19 +35,20 @@ Ce notebook constitue la première étape du pipeline :
 
 **Vectorisation des textes et préparation à la classification thématique**
 
-Ce notebook sert à transformer les articles en représentations numériques (embeddings) pour des usages ultérieurs :
-- Fusion du fichier nettoyé avec des annotations thématiques manuelles (`theme.csv`) ;
-- Nettoyage textuel léger (mise en minuscule, suppression des valeurs manquantes) ;
-- Création d’un champ `texte_total` combinant titre et contenu pour chaque article ;
-- Génération de vecteurs de texte à l’aide du modèle pré-entraîné **CamemBERT** (sentence-level embeddings) ;
-- Stockage des résultats dans un fichier `theme_token_embeddings.pkl` contenant les embeddings et leurs thèmes associés.
+Ce notebook a pour objectif de **préparer les données nécessaires à la classification des articles par rubrique journalistique**. L’objectif final est de pouvoir **isoler automatiquement les articles d’actualité**, en les distinguant des tribunes, analyses, critiques, ou autres formats éditoriaux.
 
-Ces représentations peuvent ensuite être utilisées pour :
-- Visualiser des clusters thématiques,
-- Entraîner un classifieur sur les thèmes,
-- Réaliser des analyses exploratoires de similarité entre articles.
+#### Étapes réalisées :
+- Fusion du corpus nettoyé avec des **annotations manuelles de rubrique** (`theme.csv`) ;
+- Nettoyage textuel de base (minuscule, suppression des valeurs manquantes) ;
+- Création d’un champ `texte_total` combinant le titre et le contenu de chaque article ;
+- Génération de **vecteurs de représentation** (embeddings) à l’aide du modèle pré-entraîné **CamemBERT**, appliqué sur chaque texte complet ;
+- Stockage des embeddings et de leur rubrique associée dans un fichier `theme_token_embeddings.pkl`.
 
----
+#### Utilité des représentations produites :
+- Entraîner un **modèle de classification thématique** pour prédire automatiquement la rubrique d’un article ;
+- Identifier et **extraire les seuls articles d’actualité**, en excluant les formats non pertinents pour l’analyse des faits divers (tribunes, éditoriaux, etc.) ;
+- Faciliter des analyses ultérieures sur les différences de traitement selon les rubriques ou les types de contenu.
+
 
 ### `training_score.ipynb`
 
