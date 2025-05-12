@@ -49,6 +49,7 @@ Ce notebook a pour objectif de **préparer les données nécessaires à la class
 - Identifier et **extraire les seuls articles d’actualité**, en excluant les formats non pertinents pour l’analyse des faits divers (tribunes, éditoriaux, etc.) ;
 - Faciliter des analyses ultérieures sur les différences de traitement selon les rubriques ou les types de contenu.
 
+---
 
 ### `training_score.ipynb`
 
