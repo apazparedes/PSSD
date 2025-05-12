@@ -4,9 +4,7 @@ transformers
 datasets
 torch
 matplotlib
-accelerate 
-tiktoken
-spacy
+seaborn
 numpy
 torch
 SentencePiece
