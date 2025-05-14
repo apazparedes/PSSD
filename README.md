@@ -76,17 +76,27 @@ Le modèle ainsi entraîné permet de produire une évaluation automatique de n�
 
 ---
 
-### `Untitled.ipynb`
+### `pre_post_analysis.ipynb` 
 
-**Analyse de l’évolution temporelle : impact du mouvement #MeToo**
+Ce notebook propose une double approche statistique pour évaluer l’impact du mouvement **#MeToo** (octobre 2017) sur le traitement médiatique des violences sexistes et sexuelles.
 
-Ce notebook propose une première évaluation statistique de l’effet de #MeToo sur le traitement médiatique des violences sexistes et sexuelles :
-- Création d’une variable temporelle `post_metoo` (avant/après octobre 2017) ;
-- Séparation du corpus en deux sous-ensembles (pré- et post-MeToo) ;
-- Calcul de la moyenne des scores (globaux et par dimension) pour chaque période ;
-- Application de tests statistiques (t-tests) pour évaluer la significativité des écarts.
+---
 
-L’objectif est d’objectiver l’évolution de la qualité du traitement médiatique dans le temps et d’identifier si #MeToo a constitué une rupture dans les représentations véhiculées par la presse.
+### 1. Analyse comparative (pré-/post-2017)
+- Création d’une variable binaire `post_metoo` distinguant les articles publiés **avant** et **après** octobre 2017 ;
+- Calcul des **scores moyens** (globaux et par dimension) pour chaque période ;
+- Réalisation de **tests t** pour évaluer la significativité des différences observées ;
+- Résultats présentés sous forme de **tableaux comparatifs** et **graphiques**.
+
+---
+
+### 2. Régressions temporelles
+- Estimation de modèles de régression linéaire (OLS) pour capturer l’évolution du score de traitement dans le temps ;
+- Formule utilisée :
+
+  ```python
+  model = smf.ols("score_final ~ C(annee, Treatment(reference=2017))", 
+                  data=articles).fit(cov_type='cluster', cov_kwds={'groups': articles['journal_clean']})
 
 ---
 
