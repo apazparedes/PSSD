@@ -15,7 +15,7 @@ L’objectif est de passer à l’échelle à l’aide d’outils de traitement 
 3. Fournir un outil reproductible pour évaluer des corpus similaires dans d’autres contextes ou périodes.
 
 ---
-
+Pour reproduire l’ensemble du traitement dans le bon ordre, il suffit d’exécuter le fichier `main.ipynb`, qui appelle automatiquement les autres notebooks étape par étape.
 ## Description des fichiers
 
 ### `downoald_and_cleaning_data.ipynb`
